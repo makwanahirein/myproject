@@ -1,26 +1,22 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/makwanahirein/myproject.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh '/opt/homebrew/bin/mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh '/opt/homebrew/bin/mvn test'
             }
         }
 
